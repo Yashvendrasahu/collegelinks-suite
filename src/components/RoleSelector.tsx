@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Users, Building, Award } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const roles = [
   {
@@ -14,7 +13,7 @@ const roles = [
     bgColor: "bg-primary/10"
   },
   {
-    id: "faculty",
+    id: "mentor",
     title: "Faculty Mentor",
     description: "Guide students and approve their applications",
     icon: Users,
@@ -32,7 +31,7 @@ const roles = [
     bgColor: "bg-warning/10"
   },
   {
-    id: "placement_cell",
+    id: "admin",
     title: "Placement Cell",
     description: "Comprehensive management and analytics dashboard",
     icon: Award,
@@ -77,13 +76,10 @@ const RoleSelector = () => {
                   </ul>
                   
                   <Button 
-                    asChild
                     className="w-full btn-hero group-hover:shadow-lg transition-all duration-300" 
                     size="sm"
                   >
-                    <Link to={`/auth?mode=signup&role=${role.id}`}>
-                      Get Started as {role.title}
-                    </Link>
+                    Get Started as {role.title}
                   </Button>
                 </CardContent>
               </Card>
